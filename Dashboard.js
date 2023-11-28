@@ -2,8 +2,9 @@ app.controller(
   "DashboardController",
   function ($scope, $http, $window, $state) {
     $http
-      .get("https://a08b-103-72-6-89.ngrok-free.app/UnityGoals/verify_ngo", {
+      .get("https://bf07-103-72-6-89.ngrok-free.app/UnityGoals/verify_ngo", {
         headers: {
+          Accept: "application/json",
           "ngrok-skip-browser-warning": "true",
         },
       })
@@ -18,7 +19,7 @@ app.controller(
       console.log($scope.files);
       $http
         .post(
-          "https://a08b-103-72-6-89.ngrok-free.app/UnityGoals/verify_ngo",
+          "https://bf07-103-72-6-89.ngrok-free.app/UnityGoals/verify_ngo",
           $scope.files
         )
         .then(function (response) {

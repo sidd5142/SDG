@@ -242,6 +242,15 @@
     <form class="form-right">
       <h2 class="text-uppercase">Registration form</h2>
       <div class="row">
+        <div class="mb-3">
+          <label>Username</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            ng-model="username"
+            class="input-field" />
+        </div>
         <div class="col-sm-6 mb-3">
           <label>First Name</label>
           <input
@@ -272,32 +281,36 @@
           ng-model="email"
           required />
       </div>
-      <div class="mb-3">
-        <label>Contact Number</label>
-        <input
-          type="number"
-          class="input-field"
-          name="number"
-          ng-model="contact"
-          required />
-      </div>
       <div class="row">
         <div class="col-sm-6 mb-3">
+          <label>Mission</label>
+          <input
+            type="text"
+            required
+            name="Mission"
+            id="Mission"
+            ng-model="Mission"
+            class="input-field" />
+        </div>
+        <div class="col-sm-6 mb-3">
+          <label>Ngo Name</label>
+          <input
+            type="text"
+            required
+            name="Ngo_name"
+            id="Ngo_name"
+            ng-model="Ngo_name"
+            class="input-field" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
           <label>Password</label>
           <input
             type="password"
             name="pwd"
             id="pwd"
             ng-model="password"
-            class="input-field" />
-        </div>
-        <div class="col-sm-6 mb-3">
-          <label>Current Password</label>
-          <input
-            type="password"
-            name="cpwd"
-            id="cpwd"
-            ng-model="confpassword"
             class="input-field" />
         </div>
       </div>

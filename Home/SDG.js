@@ -3,17 +3,22 @@ app.controller(
   function ($scope, $http, $location, $state) {
     $scope.register = function () {
       var data = {
-        firstname: $scope.firstname,
-        lastname: $scope.lastname,
+        username: $scope.username,
+        first_name: $scope.firstname,
+        last_name: $scope.lastname,
         email: $scope.email,
-        phonenumber: $scope.contact,
+        mission: $scope.Mission,
         password: $scope.password,
-        confirmpassword: $scope.confpassword,
+        name: $scope.Ngo_name,
+        user_type: "NGO",
       };
       console.log(data);
 
       $http
-        .post("https://5f2a-103-72-6-89.ngrok-free.app", data)
+        .post(
+          "https://9549-103-72-6-89.ngrok-free.app/UnityGoals/register",
+          data
+        )
         .then(function (response) {
           console.log(response);
         })
@@ -42,7 +47,7 @@ app.controller("SignUpController", [
       console.log(login);
       $http
         .post(
-          "https://a08b-103-72-6-89.ngrok-free.app/UnityGoals/login_view",
+          "https://bf07-103-72-6-89.ngrok-free.app/UnityGoals/login_view",
           login,
           {
             withCredentials: true,
@@ -82,7 +87,7 @@ app.controller(
 
       $http
         .post(
-          "https://a08b-103-72-6-89.ngrok-free.app/UnityGoals/register",
+          "https://bf07-103-72-6-89.ngrok-free.app/UnityGoals/register",
           data
         )
         .then(function (response) {
