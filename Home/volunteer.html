@@ -219,88 +219,84 @@
   }
 </style>
 
-<div ng-controller="RegistrationController">
-  <div class="wrapper">
-    <div class="form-left">
-      <h2 class="text-uppercase">volunteer</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Et molestie ac
-        feugiat sed. Diam volutpat commodo.
-      </p>
-      <p class="text">
-        <span>Sub Head:</span>
-        Vitae auctor eu augudsf ut. Malesuada nunc vel risus commodo viverra.
-        Praesent elementum facilisis leo vel.
-      </p>
-      <div class="form-field">
-        <!-- <input type="submit" class="account" value="Have an Account?"> -->
-        <button class="btn btn-primary" type="button" ng-click="login()">
-          Have an Account
-        </button>
+<!-- <div ng-controller="RegistrationController"> -->
+<div class="wrapper">
+  <div class="form-left">
+    <h2 class="text-uppercase">volunteer</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Et molestie ac feugiat
+      sed. Diam volutpat commodo.
+    </p>
+    <p class="text">
+      <span>Sub Head:</span>
+      Vitae auctor eu augudsf ut. Malesuada nunc vel risus commodo viverra.
+      Praesent elementum facilisis leo vel.
+    </p>
+    <div class="form-field">
+      <!-- <input type="submit" class="account" value="Have an Account?"> -->
+      <button class="btn btn-primary" type="button" ng-click="login()">
+        Have an Account
+      </button>
+    </div>
+  </div>
+  <form class="form-right">
+    <h2 class="text-uppercase">Registration form volunteer</h2>
+    <div class="row">
+      <div class="mb-3">
+        <label>Username</label>
+        <input
+          type="text"
+          name="usname"
+          id="usname"
+          ng-model="username"
+          class="input-field" />
+      </div>
+      <div class="col-sm-6 mb-3">
+        <label>First Name</label>
+        <input
+          type="text"
+          name="first_name"
+          id="first_name"
+          ng-model="firstname"
+          class="input-field" />
+      </div>
+      <div class="col-sm-6 mb-3">
+        <label>Last Name</label>
+        <input
+          type="text"
+          name="last_name"
+          id="last_name"
+          ng-model="lastname"
+          class="input-field" />
       </div>
     </div>
-    <form class="form-right">
-      <h2 class="text-uppercase">Registration form volunteer</h2>
-      <div class="row">
-        <div class="col-sm-6 mb-3">
-          <label>First Name</label>
-          <input
-            type="text"
-            name="first_name"
-            id="first_name"
-            ng-model="firstname"
-            class="input-field" />
-        </div>
-        <div class="col-sm-6 mb-3">
-          <label>Last Name</label>
-          <input
-            type="text"
-            name="last_name"
-            id="last_name"
-            ng-model="lastname"
-            class="input-field" />
-        </div>
-      </div>
+    <div class="mb-3">
+      <label>Email</label>
+      <input
+        type="email"
+        class="input-field"
+        name="email"
+        ng-model="email"
+        required />
+    </div>
+    <div class="row">
       <div class="mb-3">
-        <label>Email</label>
+        <label>Password</label>
         <input
-          type="email"
-          class="input-field"
-          name="email"
-          ng-model="email"
-          required />
+          type="password"
+          name="pwd"
+          id="pwd"
+          ng-model="password"
+          class="input-field" />
       </div>
-      <!-- <div class="mb-3">
-                <label>Contact Number</label>
-                <input type="number" class="input-field" name="number" ng-model="contact" required>
-            </div> -->
-      <div class="row">
-        <div class="col-sm-6 mb-3">
-          <label>Password</label>
-          <input
-            type="password"
-            name="pwd"
-            id="pwd"
-            ng-model="password"
-            class="input-field" />
-        </div>
-        <div class="col-sm-6 mb-3">
-          <label>Current Password</label>
-          <input
-            type="password"
-            name="cpwd"
-            id="cpwd"
-            ng-model="confpassword"
-            class="input-field" />
-        </div>
-      </div>
+    </div>
 
-      <div class="form-field">
-        <button class="btn btn-primary" type="submit" ng-click="register()">
-          Register
-        </button>
-      </div>
-    </form>
-  </div>
+    <div class="form-field">
+      <button class="btn btn-primary" type="submit" ng-click="register()">
+        Register
+      </button>
+    </div>
+  </form>
+  <!-- </div> -->
 </div>

@@ -1,73 +1,165 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary" >
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+<nav class="navbar bg-body-tertiary d-flex justify-content-end">
+  <div class="">
+    <a class="navbar-brand" href="#">Logout</a>
+  </div>
+</nav>
+<div class="container-fluid vh-100 d-flex justify-content-center">
+  <div class="col-md-7 mt-5">
+    <p class="text-black d-flex justify-content-center" style="font-size: 32px">
+      NGO,s VERIFICATION
+    </p>
+    <hr class="border border-warning border-4 opacity-50 ms-5 me-5" />
+    <p class="d-flex justify-content-center" style="font-size: 26px">
+      NG0's &nbsp; DATA
+    </p>
+    <div class="card-body m-3">
+      <div class="row d-flex justify-content-evenly p-3">
+        <div class="row">
+          <div class="col-md-6">
+            <p style="font-size: 18px">
+              Ngo name: &nbsp; {{ detail.patient_id__user_id__first_name }} {{
+              detail.patient_id__user_id__last_name}}
+            </p>
+          </div>
+          <div class="col-md-6">
+            <p style="font-size: 18px">
+              Email: &nbsp; {{ detail.patient_id__user_id__email }}
+            </p>
+          </div>
+        </div>
+        <!-- <div class="col-md-2">
+            <p style="font-size: 18px">Age: &nbsp; {{ detail.patient__age }}</p>
+          </div> -->
+        <!-- <div class="col-md-2">
+            <p style="font-size: 18px">
+              Sex: &nbsp; {{ detail.patient__gender }}
+            </p>
+          </div> -->
+        <!-- <div class="row mt-3">
+          <div class="col-md-7">
+            <p style="font-size: 18px">
+              Address: &nbsp; {{ detail.patient__address }}
+            </p>
+          </div>
+          <div class="col-md-4">
+            <p style="font-size: 18px">
+              Phone: &nbsp; {{ detail.patient__Phone }}
+            </p>
+          </div>
+        </div> -->
       </div>
     </div>
-  </nav>
+    <hr class="border border-danger border-3 opacity-50 mt-3" />
+    <p class="d-flex justify-content-center" style="font-size: 26px">
+      Verification Details
+    </p>
+    <div class="row d-flex justify-content-center">
+      <!-- <div class="col-md-5">
+        <p style="font-size: 18px">
+          Suffering From: &nbsp; {{ detail.patient__age }}
+        </p>
+      </div>
+      <div class="col-md-5">
+        <p style="font-size: 18px">
+          Current Symptoms: &nbsp; {{ detail.patient__age }}
+        </p>
+      </div> -->
 
-  <div class="container-fluid">
-    <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <span class="fs-5 d-none d-sm-inline">DASHBOARD</span>
-                </a>
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                  
-                    <li ng-repeat="dashboard in dashboards">
-                      <div>
-                          
-                      
-                        <a  class="nav-link px-0 align-middle" ui-sref="{{dashboard.state}}" ><i class="{{dashboard.icons}}"></i> {{dashboard.panel}}</a>  
-                      </div>
-                    </li> 
-                    <ul>
-                    <button class="btn btn-outline-primary" style="margin-top: 450px; height: 10%;" ng-click="logout()">LogOut</button>
-                    </ul>            
-                </ul>
-
-                <hr>
-                  
-              
-           </div>
-        </div>
-        <div class="col mt-lg-5">
-
-        <div class="container-fluid" ui-view="">
+      <div class="d-flex justify-content-evenly mt-5">
+        <div class="input-group">
+          <input
+            type="file"
+            class="form-control"
+            id="inputGroupFile04"
+            aria-describedby="inputGroupFileAddon04"
+            aria-label="Upload"
+            file-model="files" />
+          <button class="btn text-white float-end btn-primary" ng-click="add()">
+            SUBMIT
+          </button>
         </div>
       </div>
 
-     </div>
+      <div
+        class="d-flex justify-content-evenly mt-2"
+        ng-repeat="prescription in prescriptions">
+        <div class="col-md-3">
+          <label class="form-label">Medicine</label>
+          <input
+            type="text"
+            class="p-2 form-control border border-black"
+            ng-model="prescription.medicine"
+            readonly />
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Dosage</label>
+          <input
+            type="number"
+            class="p-2 form-control border border-black"
+            ng-model="prescription.dosage"
+            readonly />
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Purpose</label>
+          <input
+            type="text"
+            class="p-2 form-control border border-black"
+            ng-model="prescription.Purpose"
+            readonly />
+        </div>
+        <button
+          class="btn text-white float-end mt-4 btn-danger"
+          ng-click="del($index)">
+          <i class="bi bi-trash" style="font-size: 24px"></i>
+        </button>
+      </div>
 
- </div>   
+      <div class="row mt-3">
+        <div class="card-body ms-5">
+          <div class="d-flex justify-content-center">
+            <table id="exportable" class="table">
+              <tbody>
+                <tr
+                  ng-repeat="doctor in Medicines| filter: { first_name: searchname }">
+                  <td style="font-size: 18px">{{doctor.medicine}}</td>
+                  <td style="font-size: 18px">{{doctor.dosage}}</td>
+                  <td style="font-size: 18px">{{doctor.purpose}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
 
+      <div class="card-body m-3">
+        <hr class="border border-primary border-3 opacity-50" />
+        <!-- <div class="row d-flex justify-content-evenly p-3">
+          <div class="col-md-4">
+            <p style="font-size: 18px">
+              Doctor name: &nbsp; {{ detail.first_name }} {{ detail.last_name}}
+            </p>
+          </div>
+          <div class="col-md-4">
+            <p style="font-size: 18px">
+              Doctor Email: &nbsp; {{ detail.email }}
+            </p>
+          </div>
+          <div class="col-md-4">
+            <p style="font-size: 18px">
+              Doctor Phone: &nbsp; {{ detail.patient__Phone }}
+            </p>
+          </div>
+        </div> -->
+      </div>
 
-
+      <div class="d-flex justify-content-center mt-5">
+        <button
+          class="btn btn-primary text-white"
+          style="font-size: 20px"
+          ng-click="confirm()">
+          Submit Details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -13,7 +13,7 @@ app.controller(
       console.log(data);
 
       $http
-        .post("", data)
+        .post("https://5f2a-103-72-6-89.ngrok-free.app", data)
         .then(function (response) {
           console.log(response);
         })
@@ -35,60 +35,33 @@ app.controller("SignUpController", [
 
   function ($scope, $http, $location) {
     $scope.login = function () {
-      console.log("uj");
-    };
-    // $http
-    //   .get(apiUrl + "/hospitalapp/checkuser/", {
-    //     withCredentials: true,
-    //   })
-    //   .then(function (response) {
-    //     console.log(response.status);
-    //     if (response.status == 200) {
-    //       $location.path("/dashboard");
-    //     }
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
-
-    $scope.login = function () {
       let login = {
         username: $scope.loginName,
         password: $scope.loginPassword,
       };
-      console.log(login.username);
-      if (
-        login.username == null ||
-        login.username == "" ||
-        login.password == ""
-      ) {
-        Swal.fire({
-          icon: "error",
-          text: "Enter all details!",
-        });
-      } else if (login.username != null && login.password == null) {
-        Swal.fire({
-          icon: "error",
-          title: "Enter valid password!",
-          text: "Password Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters",
-        });
-      } else {
-        $http
-          .post(apiUrl + "/hospitalapp/login_all/", login, {
+      console.log(login);
+      $http
+        .post(
+          "https://a08b-103-72-6-89.ngrok-free.app/UnityGoals/login_view",
+          login,
+          {
             withCredentials: true,
-          })
-          .then(function (response) {
-            console.log(response.data);
-            $location.path("/dashboard");
-          })
-          .catch(function (error) {
-            console.log(error.data);
-            Swal.fire({
-              icon: "error",
-              text: error.data.message,
-            });
+          }
+        )
+        .then(function (response) {
+          console.log(response.data);
+          // if (response.data.message == "ngo logged in") {
+          $location.path("/dashboard");
+          // }
+        })
+        .catch(function (error) {
+          console.log(error.data);
+          Swal.fire({
+            icon: "error",
+            text: error.data.message,
           });
-      }
+        });
+      // }
     };
   },
 ]);
@@ -96,13 +69,33 @@ app.controller("SignUpController", [
 app.controller(
   "VolunteerController",
   function ($scope, $http, $location, $state) {
+    $scope.register = function () {
+      var data = {
+        username: $scope.username,
+        first_name: $scope.firstname,
+        last_name: $scope.lastname,
+        email: $scope.email,
+        password: $scope.password,
+        user_type: "volunteer",
+      };
+      console.log(data);
+
+      $http
+        .post(
+          "https://a08b-103-72-6-89.ngrok-free.app/UnityGoals/register",
+          data
+        )
+        .then(function (response) {
+          console.log(response);
+          $location.path("/dashboard");
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    };
     $scope.login = function () {
+      console.log("uj");
       $location.path("/login");
     };
   }
-);
-
-app.controller(
-  "DashboardController",
-  function ($scope, $http, $window, $state) {}
 );

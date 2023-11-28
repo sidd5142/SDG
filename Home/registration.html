@@ -234,50 +234,87 @@
         Praesent elementum facilisis leo vel.
       </p>
       <div>
-        <!-- <button type="btn" class="account" value="Have an Account?" ng-click="login()"> -->
         <button type="btn" class="btn btn-primary" ng-click="login()">
           Have an account
         </button>
       </div>
     </div>
     <form class="form-right">
-        <h2 class="text-uppercase">Registration form</h2>
-        <div class="row">
-            <div class="col-sm-6 mb-3">
-                <label>First Name</label>
-                <input type="text" name="first_name" id="first_name" ng-model="firstname" class="input-field">
-            </div>
-            <div class="col-sm-6 mb-3">
-                <label>Last Name</label>
-                <input type="text" name="last_name" id="last_name" ng-model="lastname" class="input-field">
-            </div>
+      <h2 class="text-uppercase">Registration form</h2>
+      <div class="row">
+        <div class="col-sm-6 mb-3">
+          <label>First Name</label>
+          <input
+            type="text"
+            required
+            name="first_name"
+            id="first_name"
+            ng-model="firstname"
+            class="input-field" />
         </div>
-        <div class="mb-3">
-            <label>Email</label>
-            <input type="email" class="input-field" name="email" ng-model="email" required>
+        <div class="col-sm-6 mb-3">
+          <label>Last Name</label>
+          <input
+            type="text"
+            required
+            name="last_name"
+            id="last_name"
+            ng-model="lastname"
+            class="input-field" />
         </div>
-        <div class="mb-3">
-            <label>Contact Number</label>
-            <input type="number" class="input-field" name="number" ng-model="contact" required>
+      </div>
+      <div class="mb-3">
+        <label>Email</label>
+        <input
+          type="email"
+          class="input-field"
+          name="email"
+          ng-model="email"
+          required />
+      </div>
+      <div class="mb-3">
+        <label>Contact Number</label>
+        <input
+          type="number"
+          class="input-field"
+          name="number"
+          ng-model="contact"
+          required />
+      </div>
+      <div class="row">
+        <div class="col-sm-6 mb-3">
+          <label>Password</label>
+          <input
+            type="password"
+            name="pwd"
+            id="pwd"
+            ng-model="password"
+            class="input-field" />
         </div>
-        <div class="row">
-            <div class="col-sm-6 mb-3">
-                <label>Password</label>
-                <input type="password" name="pwd" id="pwd" ng-model="password" class="input-field">
-            </div>
-            <div class="col-sm-6 mb-3">
-                <label>Current Password</label>
-                <input type="password" name="cpwd" id="cpwd" ng-model="confpassword" class="input-field">
-            </div>
+        <div class="col-sm-6 mb-3">
+          <label>Current Password</label>
+          <input
+            type="password"
+            name="cpwd"
+            id="cpwd"
+            ng-model="confpassword"
+            class="input-field" />
         </div>
-        <div class="mb-3">
-            <label class="option">Already have an Account<a ui-sref="Dashboard.Verification">LogIn</a> <br>
-            <label class="option">Go for<a ui-sref="volunteer">Volunteer</a>
-            </label>
-        </div>
-        <div class="form-field">
-            <button class="btn btn-primary" type="submit" ng-click="register()">Register</button>
-        </div>
+      </div>
+      <div class="mb-3">
+        <label class="option"
+          >Already have an Account<a ui-sref="Dashboard.Verification">LogIn</a>
+          <br />
+          <span class="option"
+            >Go for<a ui-sref="volunteer">Volunteer</a>
+          </span>
+        </label>
+      </div>
+      <div class="form-field">
+        <button class="btn btn-primary" type="submit" ng-click="register()">
+          Register
+        </button>
+      </div>
     </form>
   </div>
 </div>
