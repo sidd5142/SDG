@@ -21,12 +21,15 @@ app.config([
         controller: "VolunteerController",
       })
       .state("Dashboard", {
-        url: "/Dashboard",
-        templateUrl: "/Home/Dashboard.html",
+        url: "/dashboard",
+        templateUrl: "Dashboard.html",
         controller: "DashboardController",
+      })
+      .state("Dashboard.Verification", {
+        url: "/verification",
+        templateUrl: "/Pages/Verification.html",
+        controller: "VerifyController",
       });
     $urlRouterProvider.otherwise("/login");
   },
 ]);
-
-// const apiUrl = "https://";
