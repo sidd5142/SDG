@@ -17,6 +17,16 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
             templateUrl: '/Home/volunteer.html',
             controller: 'VolunteerController'
         }) 
+        .state('Dashboard', {
+            url: '/dashboard',
+            templateUrl: 'Dashboard.html',
+            controller: 'DashboardController'
+        }) 
+        .state('Dashboard.Verification', {
+            url: '/verification',
+            templateUrl: '/Pages/Verification.html',
+            controller: 'VerifyController'
+        }) 
         $urlRouterProvider.otherwise('/login');
 
 }]) ;
