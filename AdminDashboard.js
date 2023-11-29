@@ -20,9 +20,6 @@ app.controller("AdminController", function ($scope, $http, $window, $location) {
     $http
       .post(apiUrl + `approve_verification/${id}`, id, {
         withCredentials: true,
-        // headers: {
-        //   "ngrok-skip-browser-warning": "true",
-        // },
       })
       .then(function (response) {
         console.log(response);
@@ -37,9 +34,6 @@ app.controller("AdminController", function ($scope, $http, $window, $location) {
     $http
       .post(apiUrl + `reject_verification/${id}`, id, {
         withCredentials: true,
-        // headers: {
-        //   "ngrok-skip-browser-warning": "true",
-        // },
       })
       .then(function (response) {
         console.log(response);
