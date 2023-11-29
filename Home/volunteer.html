@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
   * {
     margin: 0;
     padding: 0;
@@ -219,7 +219,6 @@
   }
 </style>
 
-<!-- <div ng-controller="RegistrationController"> -->
 <div class="wrapper">
   <div class="form-left">
     <h2 class="text-uppercase">volunteer</h2>
@@ -234,7 +233,6 @@
       Praesent elementum facilisis leo vel.
     </p>
     <div class="form-field">
-      <!-- <input type="submit" class="account" value="Have an Account?"> -->
       <button class="btn btn-primary" type="button" ng-click="login()">
         Have an Account
       </button>
@@ -298,5 +296,495 @@
       </button>
     </div>
   </form>
-  <!-- </div> -->
-</div>
+</div> -->
+
+<!-- <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+  
+    body {
+      background: #00e5ff;
+      min-height: 100vh;
+    }
+  
+    .wrapper {
+      max-width: 850px;
+      background-color: #fff;
+      border-radius: 10px;
+      position: relative;
+      display: flex;
+      margin: 50px auto;
+      box-shadow: 0 8px 20px 0px #1f1f1f1a;
+      overflow: hidden;
+    }
+  
+    .wrapper .form-left {
+      background: #3786bd;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      padding: 20px 40px;
+      position: relative;
+      width: 100%;
+      color: #fff;
+    }
+  
+    .wrapper h2 {
+      font-weight: 700;
+      font-size: 25px;
+      padding: 5px 0 0;
+      margin-bottom: 34px;
+      pointer-events: none;
+    }
+  
+    .wrapper .form-left p {
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.5;
+      pointer-events: none;
+    }
+  
+    .wrapper .form-left .text {
+      margin: 20px 0 25px;
+    }
+  
+    .wrapper .form-left p span {
+      font-weight: 700;
+    }
+  
+    .wrapper .form-left input {
+      padding: 15px;
+      background: #fff;
+      border-top-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      width: 180px;
+      border: none;
+      margin: 15px 0 50px 0px;
+      cursor: pointer;
+      color: #333;
+      font-weight: 700;
+      font-size: 0.9rem;
+      appearance: unset;
+      outline: none;
+    }
+  
+    .wrapper .form-left input:hover {
+      background-color: #f2f2f2;
+    }
+  
+    .wrapper .form-right {
+      padding: 20px 40px;
+      position: relative;
+      width: 100%;
+    }
+  
+    .wrapper .form-right h2 {
+      color: #3786bd;
+    }
+  
+    .wrapper .form-right label {
+      font-weight: 600;
+      font-size: 15px;
+      color: #666;
+      display: block;
+      margin-bottom: 8px;
+    }
+  
+    .wrapper .form-right .input-field {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid #e5e5e5;
+      border-top-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      outline: none;
+      color: #333;
+    }
+  
+    .wrapper .form-right .input-field:focus {
+      border: 1px solid #31a031;
+    }
+  
+    .wrapper .option {
+      display: block;
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      font-weight: 900;
+      cursor: pointer;
+      user-select: none;
+    }
+  
+    .wrapper .option input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+  
+    .wrapper .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 18px;
+      width: 18px;
+      background-color: #fff;
+      border: 2px solid #ddd;
+      border-radius: 2px;
+    }
+  
+    .wrapper .option:hover input ~ .checkmark {
+      background-color: #f1f1f1;
+    }
+  
+    .wrapper .option input:checked ~ .checkmark {
+      border: 2px solid #e5e5e5;
+      background-color: #fff;
+      transition: 300ms ease-in-out all;
+    }
+  
+    .wrapper .checkmark:after {
+      content: "\2713";
+      position: absolute;
+      display: none;
+      color: #3786bd;
+      font-size: 1rem;
+    }
+  
+    .wrapper .option input:checked ~ .checkmark:after {
+      display: block;
+    }
+  
+    .wrapper .option .checkmark:after {
+      left: 2px;
+      top: -4px;
+      width: 5px;
+      height: 10px;
+    }
+  
+    .wrapper .register {
+      padding: 12px;
+      background: #3786bd;
+      border-top-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      width: 130px;
+      border: none;
+      margin: 6px 0 50px 0px;
+      cursor: pointer;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+    }
+  
+    .wrapper .register:hover {
+      background-color: #3785bde0;
+    }
+  
+    .wrapper a {
+      text-decoration: none;
+    }
+  
+    @media (max-width: 860.5px) {
+      .wrapper {
+        margin: 50px 5px;
+      }
+    }
+  
+    @media (max-width: 767.5px) {
+      .wrapper {
+        flex-direction: column;
+        margin: 30px 20px;
+      }
+  
+      .wrapper .form-left {
+        border-bottom-left-radius: 0px;
+      }
+    }
+  
+    @media (max-width: 575px) {
+      .wrapper {
+        margin: 30px 15px;
+      }
+  
+      .wrapper .form-left {
+        padding: 25px;
+      }
+      .wrapper .form-right {
+        padding: 25px;
+      }
+    }
+  </style>
+  
+  <div ng-controller="RegistrationController">
+    <div class="wrapper">
+      <div class="form-left">
+        <h2 class="text-uppercase">information</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Et molestie ac
+          feugiat sed. Diam volutpat commodo.
+        </p>
+        <p class="text">
+          <span>Sub Head:</span>
+          Vitae auctor eu augudsf ut. Malesuada nunc vel risus commodo viverra.
+          Praesent elementum facilisis leo vel.
+        </p>
+        <div>
+          <button type="btn" class="btn btn-primary" ng-click="login()">
+            Have an account
+          </button>
+        </div>
+      </div>
+      <form class="form-right">
+          <h2 class="text-uppercase">Registration form</h2>
+          <div class="row">
+              <div class="col-sm-6 mb-3">
+                  <label>First Name</label>
+                  <input type="text" name="first_name" id="first_name" ng-model="firstname" class="input-field">
+              </div>
+              <div class="col-sm-6 mb-3">
+                  <label>Last Name</label>
+                  <input type="text" name="last_name" id="last_name" ng-model="lastname" class="input-field">
+              </div>
+          </div>
+          <div class="mb-3">
+              <label>Email</label>
+              <input type="email" class="input-field" name="email" ng-model="email" required>
+          </div>
+          <div class="mb-3">
+              <label>Contact Number</label>
+              <input type="number" class="input-field" name="number" ng-model="contact" required>
+          </div>
+          <div class="row">
+              <div class="col-sm-6 mb-3">
+                  <label>Password</label>
+                  <input type="password" name="pwd" id="pwd" ng-model="password" class="input-field">
+              </div>
+              <div class="col-sm-6 mb-3">
+                  <label>Current Password</label>
+                  <input type="password" name="cpwd" id="cpwd" ng-model="confpassword" class="input-field">
+              </div>
+          </div>
+          <div class="mb-3">
+              <label class="option">Already have an Account <a ui-sref="Dashboard.Verification">LogIn</a> <br>
+              <label class="option">Go for<a ui-sref="volunteer">Volunteer</a>
+              </label>
+          </div>
+          <div class="form-field">
+              <button class="btn btn-primary" type="submit" ng-click="register()">Register</button>
+          </div>
+      </form>
+    </div>
+  </div> -->
+
+<!-- Section: Design Block -->
+<section class="background-radial-gradient overflow-hidden">
+  <style>
+    .background-radial-gradient {
+      background-color: hsl(218, 41%, 15%);
+      background-image: radial-gradient(
+          650px circle at 0% 0%,
+          hsl(218, 41%, 35%) 15%,
+          hsl(218, 41%, 30%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%
+        ),
+        radial-gradient(
+          1250px circle at 100% 100%,
+          hsl(218, 41%, 45%) 15%,
+          hsl(218, 41%, 30%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%
+        );
+    }
+
+    #radius-shape-1 {
+      height: 220px;
+      width: 220px;
+      top: -60px;
+      left: -130px;
+      background: radial-gradient(#44006b, #ad1fff);
+      overflow: hidden;
+    }
+
+    #radius-shape-2 {
+      border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+      bottom: -60px;
+      right: -110px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(#44006b, #ad1fff);
+      overflow: hidden;
+    }
+
+    .bg-glass {
+      background-color: hsla(0, 0%, 100%, 0.9) !important;
+      backdrop-filter: saturate(200%) blur(25px);
+    }
+  </style>
+
+  <div
+    class="container-fluid px-4 py-5 px-md-5 text-center text-lg-start my-5"
+    style="height: 870px"
+  >
+    <div class="row gx-lg-5 align-items-center mb-5">
+      <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+        <h1
+          class="my-5 display-5 fw-bold ls-tight"
+          style="color: hsl(218, 81%, 95%)"
+        >
+          The best offer <br />
+          <span style="color: hsl(218, 81%, 75%)">for your NGO's</span>
+        </h1>
+        <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus,
+          expedita iusto veniam atque, magni tempora mollitia dolorum
+          consequatur nulla, neque debitis eos reprehenderit quasi ab ipsum nisi
+          dolorem modi. Quos?
+        </p>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+        <div
+          id="radius-shape-1"
+          class="position-absolute rounded-circle shadow-5-strong"
+        ></div>
+        <div
+          id="radius-shape-2"
+          class="position-absolute shadow-5-strong"
+        ></div>
+
+        <div class="card bg-glass">
+          <div class="card-body px-4 py-5 px-md-5">
+            <form>
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input
+                      type="text"
+                      id="form3Example1"
+                      ng-model="firstname"
+                      class="form-control"
+                    />
+                    <label class="form-label" for="form3Example1"
+                      >First name</label
+                    >
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input
+                      type="text"
+                      id="form3Example2"
+                      ng-model="lastname"
+                      class="form-control"
+                    />
+                    <label class="form-label" for="form3Example2"
+                      >Last name</label
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input
+                  type="email"
+                  id="form3Example3"
+                  ng-model="email"
+                  class="form-control"
+                />
+                <label class="form-label" for="form3Example3"
+                  >Email address</label
+                >
+              </div>
+
+              <div class="form-outline mb-4">
+                <input
+                  type="number"
+                  id="form3Example3"
+                  ng-model="contact"
+                  class="form-control"
+                />
+                <label class="form-label" for="form3Example3">Contact</label>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input
+                  type="password"
+                  id="form3Example4"
+                  ng-model="password"
+                  class="form-control"
+                />
+                <label class="form-label" for="form3Example4">Password</label>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input
+                  type="password"
+                  id="form3Example4"
+                  ng-model="confpassword"
+                  class="form-control"
+                />
+                <label class="form-label" for="form3Example4"
+                  >Confirm Password</label
+                >
+              </div>
+
+              <!-- Checkbox -->
+              <!-- <div class="form-check d-flex justify-content-center mb-4">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                  <label class="form-check-label" for="form2Example33">
+                    Subscribe to our newsletter
+                  </label>
+                </div> -->
+
+              <!-- Submit button -->
+              <button
+                type="submit"
+                class="btn btn-primary btn-block mb-4"
+                ng-click="register()"
+              >
+                Sign up
+              </button>
+
+              <!-- Register buttons -->
+              <div class="text-center">
+                <div class="mb-3">
+                  <label class="option"
+                    >Already have an Account <a ui-sref="SignUp">LogIn</a>
+                    <br />
+                  </label>
+                </div>
+                <button type="button" class="btn btn-link btn-floating mx-1">
+                  <i class="fab fa-facebook-f"></i>
+                </button>
+
+                <button type="button" class="btn btn-link btn-floating mx-1">
+                  <i class="fab fa-google"></i>
+                </button>
+
+                <button type="button" class="btn btn-link btn-floating mx-1">
+                  <i class="fab fa-twitter"></i>
+                </button>
+
+                <button type="button" class="btn btn-link btn-floating mx-1">
+                  <i class="fab fa-github"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->

@@ -16,7 +16,7 @@ app.controller(
   
         $http
           .post(
-            "https://9549-103-72-6-89.ngrok-free.app/UnityGoals/register",
+            "https://20a8-103-77-186-10.ngrok-free.app/UnityGoals/register",
             data
           )
           .then(function (response) {
@@ -47,7 +47,7 @@ app.controller(
         console.log(login);
         $http
           .post(
-            "https://bf07-103-72-6-89.ngrok-free.app/UnityGoals/login_view",
+            "https://10.21.82.169:8000/UnityGoals/login_view",
             login,
             {
               withCredentials: true,
@@ -87,7 +87,7 @@ app.controller(
   
         $http
           .post(
-            "https://bf07-103-72-6-89.ngrok-free.app/UnityGoals/register",
+            "https://20a8-103-77-186-10.ngrok-free.app/UnityGoals/register",
             data
           )
           .then(function (response) {

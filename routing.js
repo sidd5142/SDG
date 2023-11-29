@@ -30,7 +30,12 @@ app.config([
         url: "/verification",
         templateUrl: "/Pages/Verification.html",
         controller: "VerifyController",
+      })
+      .state("Homepage", {
+        url: "/homepage",
+        templateUrl: "/HomePage/homepage.html",
+        controller: "HomePageController",
       });
-    $urlRouterProvider.otherwise("/login");
+    $urlRouterProvider.otherwise("/homepage");
   },
 ]);
