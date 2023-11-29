@@ -35,7 +35,7 @@ app.controller("AdminController", function ($scope, $http, $window, $location) {
   $scope.Reject = function (id) {
     console.log(id);
     $http
-      .post(apiUrl + `approve_verification/${id}`, id, {
+      .post(apiUrl + `reject_verification/${id}`, id, {
         withCredentials: true,
         // headers: {
         //   "ngrok-skip-browser-warning": "true",
