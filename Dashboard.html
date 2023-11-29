@@ -1,133 +1,153 @@
-<nav class="navbar bg-body-tertiary d-flex justify-content-end">
-  <div class="">
-    <a class="navbar-brand" href="#">Logout</a>
-  </div>
-</nav>
-<div class="container-fluid vh-100 d-flex justify-content-center">
-  <div class="col-md-7 mt-5">
-    <p class="text-black d-flex justify-content-center" style="font-size: 32px">
-      NGO,s VERIFICATION
-    </p>
-    <hr class="border border-warning border-4 opacity-50 ms-5 me-5" />
-    <p class="d-flex justify-content-center" style="font-size: 26px">
-      NG0's &nbsp; DATA
-    </p>
-    <div class="card-body m-3">
-      <div class="row d-flex justify-content-evenly p-3">
-        <div class="row">
-          <div class="col-md-6">
-            <p style="font-size: 18px">
-              Ngo name: &nbsp; {{ detail.patient_id__user_id__first_name }} {{
-              detail.patient_id__user_id__last_name}}
-            </p>
-          </div>
-          <div class="col-md-6">
-            <p style="font-size: 18px">
-              Email: &nbsp; {{ detail.patient_id__user_id__email }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr class="border border-danger border-3 opacity-50 mt-3" />
-    <p class="d-flex justify-content-center" style="font-size: 26px">
-      Verification Details
-    </p>
-    <div class="row d-flex justify-content-center">
-      <div class="d-flex justify-content-evenly mt-5">
-        <div class="input-group">
-          <input
-            type="file"
-            class="form-control"
-            id="inputGroupFile04"
-            aria-describedby="inputGroupFileAddon04"
-            aria-label="Upload"
-            file-model="files" />
-          <button class="btn text-white float-end btn-primary" ng-click="add()">
-            SUBMIT
-          </button>
-        </div>
-      </div>
+<style>
+  body {
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    background-image: url("images/GMmCQHC.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .card {
+    padding: 30px 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border: none !important;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
+  }
+  .blue-text {
+    color: #00bcd4;
+  }
+  .form-control-label {
+    margin-bottom: 0;
+  }
+  input,
+  textarea,
+  button {
+    padding: 8px 15px;
+    border-radius: 5px !important;
+    margin: 5px 0px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-size: 18px !important;
+    font-weight: 300;
+  }
+  input:focus,
+  textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #00bcd4;
+    outline-width: 0;
+    font-weight: 400;
+  }
+  .btn-block {
+    text-transform: uppercase;
+    font-size: 15px !important;
+    font-weight: 400;
+    height: 43px;
+    cursor: pointer;
+  }
+  .btn-block:hover {
+    color: #fff !important;
+  }
+  button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0;
+  }
+</style>
 
-      <div
-        class="d-flex justify-content-evenly mt-2"
-        ng-repeat="prescription in prescriptions">
-        <div class="col-md-3">
-          <label class="form-label">Medicine</label>
-          <input
-            type="text"
-            class="p-2 form-control border border-black"
-            ng-model="prescription.medicine"
-            readonly />
-        </div>
-        <div class="col-md-3">
-          <label class="form-label">Dosage</label>
-          <input
-            type="number"
-            class="p-2 form-control border border-black"
-            ng-model="prescription.dosage"
-            readonly />
-        </div>
-        <div class="col-md-3">
-          <label class="form-label">Purpose</label>
-          <input
-            type="text"
-            class="p-2 form-control border border-black"
-            ng-model="prescription.Purpose"
-            readonly />
-        </div>
-        <button
-          class="btn text-white float-end mt-4 btn-danger"
-          ng-click="del($index)">
-          <i class="bi bi-trash" style="font-size: 24px"></i>
-        </button>
-      </div>
-
-      <div class="row mt-3">
-        <div class="card-body ms-5">
-          <div class="d-flex justify-content-center">
-            <table id="exportable" class="table">
-              <tbody>
-                <tr
-                  ng-repeat="doctor in Medicines| filter: { first_name: searchname }">
-                  <td style="font-size: 18px">{{doctor.medicine}}</td>
-                  <td style="font-size: 18px">{{doctor.dosage}}</td>
-                  <td style="font-size: 18px">{{doctor.purpose}}</td>
-                </tr>
-              </tbody>
-            </table>
+<div class="container-fluid px-1 py-5 mx-auto">
+  <div class="row d-flex justify-content-center">
+    <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+      <div class="card">
+        <h5 class="text-center mb-4">Powering world-class companies</h5>
+        <form class="form-card" onsubmit="event.preventDefault()">
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3"
+                >First name<span class="text-danger"> *</span></label
+              >
+              <input
+                type="text"
+                id="fname"
+                name="fname"
+                placeholder="Enter your first name"
+                onblur="validate(1)" />
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3"
+                >Last name<span class="text-danger"> *</span></label
+              >
+              <input
+                type="text"
+                id="lname"
+                name="lname"
+                placeholder="Enter your last name"
+                onblur="validate(2)" />
+            </div>
           </div>
-        </div>
-      </div>
-
-      <div class="card-body m-3">
-        <hr class="border border-primary border-3 opacity-50" />
-        <!-- <div class="row d-flex justify-content-evenly p-3">
-          <div class="col-md-4">
-            <p style="font-size: 18px">
-              Doctor name: &nbsp; {{ detail.first_name }} {{ detail.last_name}}
-            </p>
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3"
+                >Business email<span class="text-danger"> *</span></label
+              >
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder=""
+                onblur="validate(3)" />
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3"
+                >Phone number<span class="text-danger"> *</span></label
+              >
+              <input
+                type="text"
+                id="mob"
+                name="mob"
+                placeholder=""
+                onblur="validate(4)" />
+            </div>
           </div>
-          <div class="col-md-4">
-            <p style="font-size: 18px">
-              Doctor Email: &nbsp; {{ detail.email }}
-            </p>
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3"
+                >Job title<span class="text-danger"> *</span></label
+              >
+              <input
+                type="text"
+                id="job"
+                name="job"
+                placeholder=""
+                onblur="validate(5)" />
+            </div>
           </div>
-          <div class="col-md-4">
-            <p style="font-size: 18px">
-              Doctor Phone: &nbsp; {{ detail.patient__Phone }}
-            </p>
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-12 flex-column d-flex">
+              <label class="form-control-label px-3"
+                >What would you be using Flinks for?<span class="text-danger">
+                  *</span
+                ></label
+              >
+              <input
+                type="text"
+                id="ans"
+                name="ans"
+                placeholder=""
+                onblur="validate(6)" />
+            </div>
           </div>
-        </div> -->
-      </div>
-
-      <div class="d-flex justify-content-center mt-5">
-        <button
-          class="btn btn-primary text-white"
-          style="font-size: 20px"
-          ng-click="confirm()">
-          Submit Details
-        </button>
+          <div class="row justify-content-end">
+            <div class="form-group col-sm-6">
+              <button type="submit" class="btn-block btn-primary">
+                Request a demo
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
