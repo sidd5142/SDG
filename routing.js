@@ -1,5 +1,4 @@
 var app = angular.module("myApp", ["ui.router"]);
-var app = angular.module("myApp", ["ui.router"]);
 
 app.config([
   "$stateProvider",
@@ -26,6 +25,11 @@ app.config([
         templateUrl: "Dashboard.html",
         controller: "DashboardController",
       })
+      .state("AdminDashboard", {
+        url: "/Admin",
+        templateUrl: "AdminDashboard.html",
+        controller: "AdminController",
+      })
       .state("Dashboard.Verification", {
         url: "/verification",
         templateUrl: "/Pages/Verification.html",
@@ -39,3 +43,5 @@ app.config([
     $urlRouterProvider.otherwise("/homepage");
   },
 ]);
+
+const apiUrl = "https://db0b-103-72-6-89.ngrok-free.app/UnityGoals/";

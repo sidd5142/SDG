@@ -1,0 +1,43 @@
+<div style="text-align: center">
+  <h1><u>Admin Verification Desk</u></h1>
+</div>
+<table class="table mt-lg-5">
+  <thead class="table-dark">
+    <tr>
+      <th style="font-size: 18px">S.No</th>
+      <th style="font-size: 18px">Admin Name</th>
+      <th style="font-size: 18px">Admin Email</th>
+      <th style="font-size: 18px">Ngo name</th>
+      <th style="font-size: 18px">Mission</th>
+      <th style="font-size: 18px">Status</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <tr
+      ng-repeat="doctor in ngoRequests | filter: {patient_id__user_id__first_name: searchname }">
+      <th style="font-size: 16px">{{$index + 1}}</th>
+      <!-- <th style="font-size: 16px">{{doctor.username}}</th> -->
+      <td style="font-size: 16px">
+        {{ doctor.first_name }} {{ doctor.last_name }}
+      </td>
+      <td style="font-size: 16px">{{ doctor.email }}</td>
+      <td style="font-size: 16px">{{ doctor.ngo_name }}</td>
+      <td style="font-size: 16px">{{ doctor.mission }}</td>
+
+      <td ng-if="!doctor.verification_status">
+        <button class="btn btn-primary btn-sm" ng-click="Accept(doctor.id)">
+          Approve
+        </button>
+      </td>
+      <td ng-if="doctor.verification_status == true" col="2">
+        <span>Verified</span>
+      </td>
+      <td ng-if="!doctor.verification_status">
+        <button class="btn btn-danger btn-sm" ng-click="Reject(doctor.id)">
+          Reject
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
