@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button
@@ -38,6 +38,7 @@
       </ul>
       <form class="d-flex" role="search">
         <input
+        required
           class="form-control me-2"
           type="search"
           placeholder="Search"
@@ -46,17 +47,7 @@
       </form>
     </div>
   </div>
-</nav>
-
-<!-- <div class="container-fluid">
-  <div class="row flex-nowrap">
-    <div class="col mt-lg-5">
-      <div class="container-fluid" ui-view=""></div>
-    </div>
-  </div>
-</div>
-
-</div>    -->
+</nav> -->
 
 <style>
   * {
@@ -66,10 +57,11 @@
 
   body {
     background-color: #e6f9ff;
+    height: 100vh;
   }
 
   .card {
-    width: 600px;
+    width: 900px;
     background-color: #efefef;
     border: none;
     cursor: pointer;
@@ -134,119 +126,167 @@
     height: 270px;
     width: 80%;
   }
-  /* ng-repeat="detail in details"  */
 </style>
 
-<!-- <div class="container mt-4 mb-4 p-3 d-flex justify-content-center"> 
-    <div class="card p-4" > 
-        <div class=" image d-flex flex-column justify-content-center align-items-center" >
-           
-            <button class="btn btn-outline-danger"> 
-                <img src="https://ui-avatars.com/api/?name={{detail.name}}" height="100" width="100" />
-            </button>
-             <span class="name mt-3">{{detail.name}}</span> 
-             <span class="idd">{{detail.UPI_id}}</span>
-              <div class="d-flex flex-row justify-content-center align-items-center gap-2"> 
-                <span class="idd1">{{detail.UPI_number}}</span>
-              </div>
-    
-                    <div class="text mt-3">
-                        <h2>Gender : {{detail.gender}}</h2><br>
-                        <h2>Contact : {{detail.UPI_number}}</h2><br>
-                        <h2>Email : {{detail.email}}</h2><br>
-                        <h2>Bank Name : {{detail.bank_name}}</h2><br>
-                        <h2>Branch Name : {{detail.branch_name}}</h2><br>
-                        <h2>Account Number : {{detail.account_number}}</h2><br>
-                    </div>
-                         
-        </div> 
-        <div class="text-center" style="margin-top: 2%; font-size: 15px;">
-
-            Powered by <br>
-            <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn6Y5DVqqrbBoi4HnB-G5YLf9TJHsMqKj-Pg&usqp=CAU" alt="" width="30" height="30">|
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTrzSeqb6V1ldaVC4drFb6axSZ0nZ_H70k4A&usqp=CAU" alt="" height="15"></p>
-
-          </div>
-    </div>
-</div> -->
-
 <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
-  <div class="main">
-    <div class="card" >
-      <div class="card-body">
-        <button
-          class="btn btn-outline-primary"
-          id="profilebtn"
-          style="margin-left: 35%; margin-bottom: 3%"
-        >
-          <!-- <img
-            src="https://ui-avatars.com/api/?name={{detail.name}}"
-            height="100"
-            width="100"
-            style="border-radius: 50%"
-          /></button
-        ><br />
-        <span class="name mt-3" style="text-align: center; margin-left: 34%"
-          >{{detail.username}}</span
-        > -->
-
-        <table>
-          <tbody ng-repeat="detail in details">
-            <tr>
-              <td>Gender</td>
-              <td>:</td>
-              <td>{{detail.gender}}</td>
-            </tr>
-            <tr>
-              <td>Email</td>
-              <td>:</td>
-              <td>{{detail.email}}</td>
-            </tr>
-            <tr>
-              <td>Contact</td>
-              <td>:</td>
-              <td>{{detail.UPI_number}}</td>
-            </tr>
-            <tr>
-              <td>UPI Id</td>
-              <td>:</td>
-              <td>{{detail.UPI_id}}</td>
-            </tr>
-            <tr>
-              <td>Bank Name</td>
-              <td>:</td>
-              <td>{{detail.bank_name}}</td>
-            </tr>
-            <tr>
-              <td>Bank Branch</td>
-              <td>:</td>
-              <td>{{detail.branch_name}}</td>
-            </tr>
-            <tr>
-              <td>Account Number</td>
-              <td>:</td>
-              &nbsp;
-              <td>{{detail.account_number}}</td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="text-center" style="margin-top: 2%; font-size: 15px">
-          Powered by <br />
-          <p>
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn6Y5DVqqrbBoi4HnB-G5YLf9TJHsMqKj-Pg&usqp=CAU"
-              alt=""
-              width="30"
-              height="30"
-            />|
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTrzSeqb6V1ldaVC4drFb6axSZ0nZ_H70k4A&usqp=CAU"
-              alt=""
-              height="15"
-            />
-          </p>
+  <div class="row">
+    <div class="col-lg-10">
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Name</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">
+                {{details.first_name}}&nbsp;&nbsp;{{details.last_name}}
+              </p>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Email</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">{{details.email}}</p>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">NGO's Name</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">{{details.name}}</p>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Mission</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">{{details.mission}}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="mt-4 mb-4 d-flex justify-content-center">
+  <div class="row">
+    <div class="col-lg-10">
+      <div class="card" style="border-radius: 15px">
+        <div class="card-body p-4">
+          <h3 class="mb-3">{{details.username}}</h3>
+          <p class="small mb-0">
+            <strong>To verify your ngo submit the file</strong>
+          </p>
+          <hr class="my-4" />
+          <form action="" ng-submit="file()">
+            <div class="d-flex justify-content-start align-items-center">
+              <div class="input-group">
+                <input
+                  required
+                  type="file"
+                  class="form-control"
+                  file-model="fileModel" />
+                <button class="btn btn-outline-secondary" type="submit">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5 mb-5">
+  <div class="card p-5 w-100 mb-5">
+    <form ng-submit="submit()">
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example3">Project name</label>
+        <input
+          required
+          type="text"
+          id="form6Example3"
+          class="form-control"
+          ng-model="project_name" />
+      </div>
+
+      <div class="input-group mt-4 mb-4">
+        <label class="input-group-text" for="inputGroupSelect01"
+          >Choose Sdgc
+        </label>
+        <select
+          class="form-select"
+          ng-model="select"
+          ng-options="name as name.name for name in names"
+          ng-click="ohkay(select.id)"
+          placeholder="choose Sdgc">
+          <option value="">choose option</option>
+        </select>
+      </div>
+
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example6">Title</label>
+        <input
+          required
+          type="text"
+          id="form6Example6"
+          class="form-control"
+          ng-model="project_title" />
+      </div>
+      <!-- Text input
+      required -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">Location</label>
+        <input
+          required
+          type="text"
+          id="form6Example4"
+          class="form-control"
+          ng-model="location" />
+      </div>
+
+      <!-- Email input
+      required -->
+      <div class="input required-group mb-5">
+        <input
+          required
+          type="file"
+          class="form-control"
+          file-model="fileModel" />
+      </div>
+
+      <!-- Number input
+      required -->
+
+      <!-- Message input
+      required -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example7">Description</label>
+        <textarea
+          class="form-control"
+          id="form6Example7"
+          rows="4"
+          ng-model="description"></textarea>
+      </div>
+
+      <!-- Submit button -->
+      <div class="w-100 d-flex justify-content-center">
+        <button
+          data-mdb-ripple-init
+          type="submit"
+          class="btn btn-secondary btn-block mb-4 col-lg-2">
+          Add project
+        </button>
+      </div>
+    </form>
   </div>
 </div>

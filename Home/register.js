@@ -56,10 +56,6 @@ app.controller("SignUpController", [
         })
         .catch(function (error) {
           console.log(error.data);
-          // Swal.fire({
-          //   icon: "error",
-          //   text: error.data.message,
-          // });
         });
       // }
     };
