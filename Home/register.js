@@ -34,9 +34,12 @@ app.controller("SignUpController", [
   "$scope",
   "$http",
   "$location",
+  "$state",
 
-  function ($scope, $http, $location) {
+  function ($scope, $http, $location,$state) {
     $scope.login = function () {
+      $location
+      // $location.path("/homepage")
       let login = {
         username: $scope.loginName,
         password: $scope.loginPassword,
@@ -49,13 +52,18 @@ app.controller("SignUpController", [
         .then(function (response) {
           console.log(response.data);
           if (response.data.message == "Admin logged in") {
-            $location.path("/Admin");
+            // $location.path("/voul");
+            $state.go("voul")
+            // window.location.href = "/Clone/vol.html";
+
+
           } else {
-            $location.path("/dashboard");
+            // $location.path("/volunteer");
+            window.location.href = "/Clone/index.html";
           }
         })
         .catch(function (error) {
-          console.log(error.data);
+          console.log(error);
         });
       // }
     };
